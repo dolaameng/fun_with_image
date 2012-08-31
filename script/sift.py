@@ -75,9 +75,9 @@ def descriptor_match_scores(raw_images, dist_ratio = 0.6):
 def test_geo_matching():
     raw_images = load_raw_image_group('../data/whitehouses/')
     nbr_images = len(raw_images)
-    matchscores = descriptor_match_scores(raw_images)
+    #matchscores = descriptor_match_scores(raw_images)
     #savetxt('whitehouse_match.txt', matchscores, '%i')
-    #matchscores = loadtxt('whitehouse_match.txt')
+    matchscores = loadtxt('whitehouse_match.txt')
     ## construct the dot graph based on matchscores
     g = pydot.Dot(graph_type = 'graph') # not default directed graph
     threshold = 2 # similiarity threshold
@@ -103,8 +103,8 @@ def test_geo_matching():
     
 def test():
     ## test sift_image
-    """
-    im = Image.open('../data/a_thumbs/11_t.jpg').convert('L')
+    
+    im = Image.open('../data/lena.jpg').convert('L')
     def draw_circle(c, r):
         t = arange(0, 1.01, .01)*2*pi
         x = r*cos(t) + c[0]
@@ -115,7 +115,7 @@ def test():
     imshow(array(im))
     locs, _ = sift_image(im)
     plot(locs[:,0], locs[:,1], 'ob')
-    """
+    
     ## test match_descriptor
     """
     im = Image.open('../data/lena.jpg').convert('L')
