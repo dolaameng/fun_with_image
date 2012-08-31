@@ -89,7 +89,7 @@ def image_derivatives(im, sigma = 5):
 def test():
     ## test histogram equalization 
     """
-    lena = array(Image.open('../data/lena.bmp').convert('L'))
+    lena = array(Image.open('../data/lena.jpg').convert('L'))
     hlena, _ = histeq(lena)
     figure()
     gray()
@@ -115,14 +115,15 @@ def test():
     """
     ## test image_type
     """
-    raw_lena = array(Image.open('../data/lena.bmp'))
+    raw_lena = array(Image.open('../data/lena.jpg'))
     print image_type(raw_lena)
     gray_lena = array(Image.fromarray(raw_lena).convert('L'))
     print image_type(gray_lena)
     """
+    """
     ## test image_derivate
-    color_lena = array(Image.open('../data/lena.bmp'))
-    gray_lena = array(Image.open('../data/lena.bmp').convert('L')) 
+    color_lena = array(Image.open('../data/lena.jpg'))
+    gray_lena = array(Image.open('../data/lena.jpg').convert('L')) 
     imx, imy = image_derivatives(color_lena, 10)
     figure()
     subplot(1, 3, 1)
@@ -140,9 +141,11 @@ def test():
     imshow(imx)
     subplot(1, 3, 3)
     imshow(imy)
+    """
+    
+    show()
         
 
 
 if __name__ == '__main__':
     test()
-    show()
